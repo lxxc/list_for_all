@@ -63,6 +63,17 @@ sp create_node(sp becp);
 void free_node(sp *loca_addr);
 
 
+int create_list_farr();
+int create_list_finput(sp *head_addr);
+int print_list(sp head);
+void free_list(sp *head_addr);
+
+insert_node_into_list();
+delete_node_from_list();
+find_node_in_list();
+
+
+
 
 
 #endif
