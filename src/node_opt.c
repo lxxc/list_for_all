@@ -1,16 +1,4 @@
-#ifndef LXX_LIST_FOR_ALL_H_
-#define LXX_LIST_FOR_ALL_H_
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-/*enter your node structure name*/
-typedef struct mnode st;
-typedef st *sp;
-
-/************************node options**************************/
-/************************node options**************************/
+#include "proj.h"
 
 /***************************************************************
 	SYNOPSIS
@@ -27,8 +15,19 @@ typedef st *sp;
 		the number of charactors that have been shown.
 	AUTHOR
 		yourself.
+	ADDRESS & TIME
+
 ****************************************************************/
-int show_node(sp loca);
+int show_node(sp loca)
+{
+	int scount=0;
+
+	/*enter your code here*/
+	printf("node[%d]:%s\t->%p\n",loca->id,loca->name,loca->next);
+	/*over*/
+
+	return scount;
+}
 
 
 /***************************************************************
@@ -44,8 +43,17 @@ int show_node(sp loca);
 		NULL.
 	AUTHOR
 		Liux
+	ADRESS & TIME
+		totyuedu & 2015-06-12
 ****************************************************************/
-sp create_node(sp becp);
+sp create_node(sp becp)
+{
+	sp new=(sp)malloc(sizeof(st));
+	
+	memcpy(new,becp,sizeof(st));
+
+	return new;
+}
 
 /***************************************************************
 	SYNOPSIS
@@ -59,10 +67,14 @@ sp create_node(sp becp);
 		void
 	AUTHOR
 		Liux
+	ADRESS & TIME
+		totyuedu & 2015-06-12
 ****************************************************************/
-void free_node(sp *loca_addr);
+void free_node(sp *loca_addr)
+{
+	free(*loca_addr);
+	*loca_addr=NULL;
 
+	return ;
+}
 
-
-
-#endif
