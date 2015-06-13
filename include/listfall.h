@@ -62,15 +62,20 @@ sp create_node(sp becp);
 ****************************************************************/
 void free_node(sp *loca_addr);
 
-
+/*to be continue...*/
 int create_list_farr();
+
+
 int create_list_finput(sp *head_addr);
 int print_list(sp head);
 void free_list(sp *head_addr);
 
-insert_node_into_list();
-delete_node_from_list();
-find_node_in_list();
+sp insert_node_into_list();
+sp insert_node_into_list_head(sp *head_addr,sp pos);
+sp insert_node_into_list_tail(sp *head_addr,sp pos);
+sp insert_node_into_list_behind_node(sp *head_addr,int nodeid,sp pos);
+int delete_node_from_list(sp *head_addr,sp);
+sp find_node_in_list(sp head,int id);
 
 
 

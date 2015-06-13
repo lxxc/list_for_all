@@ -23,7 +23,7 @@ int show_node(sp loca)
 	int scount=0;
 
 	/*enter your code here*/
-	printf("node[%d]:%s\t->%p\n",loca->id,loca->name,loca->next);
+	scount=printf("node[%d]:%s\t->%p\n",loca->id,loca->name,loca->next);
 	/*over*/
 
 	return scount;

@@ -2,18 +2,12 @@
 
 int main(void)
 {
-	st fir;
-	sp newp;
+	sp head;
 
-	fir.id=3;
-	strcpy(fir.name,"liux");
-	fir.next=NULL;
-
-	newp=create_node(&fir);
-	show_node(newp);
-	free_node(&newp);
-
-	printf("newp=%p\n",newp);
+	create_list_finput(&head);
+	printf("out put %d bytes\n",print_list(head));
+	free_list(&head);
+	printf("head=%p\n",head);
 
 	return 0;
 }
