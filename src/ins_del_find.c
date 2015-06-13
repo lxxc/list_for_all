@@ -28,15 +28,33 @@ sp insert_node_into_list_tail(sp *head_addr,sp pos)
 	return pos;
 }
 
-sp insert_node_into_list_behind_node(sp *head_addr,int nodeid,sp pos);
+sp insert_node_into_list_behind_node(sp *head_addr,int nodeid,sp pos)
+{
+	
+	return pos;
+}
+
 int delete_node_from_list(sp *head_addr,sp);
 
-sp find_node_in_list(sp head,int id)
+sp find_node_in_list(sp head,int id,sp *back_addr)
 {
-	while(head){
-		if(head->id==id)
+	*back_addr=NULL;
+	if(!head){
+		return NULL;
+	}
+	if(head->id==id){
+		return head;
+	}
+	if(head->next==NULL)
+		return NULL;
+	while(head->next){
+		if(head->next->id==id)
 			break;
 		head=head->next;
 	}
-	return head;
+	*back_addr=head;
+	return head->next;
 }
+
+
+
